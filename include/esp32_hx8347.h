@@ -14,7 +14,6 @@ typedef struct esp32_hx8347_config_t
 
 esp_err_t esp32_hx8347_init(esp32_hx8347_config_t *config, esp32_hx8347_handle_t *handle);
 
-
 void hx8347_lcd_write_register(esp32_hx8347_handle_t dev, uint8_t addr, uint16_t data);
 
 void lcd_write_comm_byte(esp32_hx8347_handle_t dev, uint8_t cmd);

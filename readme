@@ -1,0 +1,21 @@
+# ESP32 HX8347 Display Driver
+
+This project provides a draft of an example and driver for interfacing the HX8347 display controller with an ESP32 microcontroller.
+
+## Features
+
+- just a draft. It is not recomended to be used yet
+
+## Requirements
+
+- ESP32s3 development board
+- HX8347-based display module
+
+## License
+
+MIT License
+
+## References
+
+- [HX8347 Datasheet](https://www.displayfuture.com/Display/datasheet/controller/HX8347.pdf)
+- [ESP32 Documentation](https://docs.espressif.com/)
