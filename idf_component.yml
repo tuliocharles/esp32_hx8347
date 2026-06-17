@@ -2,14 +2,18 @@ license: MIT
 
 description: ESP_HX8347 is a component for driving the HX8347 display controller, commonly used in TFT LCD displays. It provides an interface for initializing the display, sending commands and data, and controlling various display parameters. 
 
-url: https://github.com/tuliocharles/esp_hx8347
-repository: https://github.com/tuliocharles/esp_hx8347.git
+url: https://github.com/tuliocharles/esp32_hx8347
+repository: https://github.com/tuliocharles/esp32_hx8347.git
 
 maintainers:
   - "Túlio Carvalho <tulio.cefetmg@gmail.com>"
 
 dependencies:
   idf: ">=5.5"
+  espressif/esp_lcd_nt35510: "^1.0.0"
+  lvgl/lvgl: "9.2.2"
+
+
   
 files:
   excludes:
@@ -17,3 +21,5 @@ files:
     - sdkconfig
     - "**/dependencies.lock"
     - .vscode/
+
+    

@@ -5,4 +5,5 @@ idf_component_register(SRCS "esp32_hx8347.c"
                         driver
                         esp_rom
                         soc 
-                        freertos)
+                        freertos
+                        esp_driver_i2s)
