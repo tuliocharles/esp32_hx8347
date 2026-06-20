@@ -1,3 +1,6 @@
 dependencies:
   tuliocharles/esp32_hx8347:
     version: ">=0.2.0"
+    # for local developmente, use the local
+    # copy of the component
+    ## override_path: "../../../"
