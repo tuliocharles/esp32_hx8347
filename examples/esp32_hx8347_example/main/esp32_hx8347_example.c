@@ -44,12 +44,15 @@ void app_main(void)
     lv_obj_set_style_text_font(label3, &lv_font_montserrat_32, LV_PART_MAIN);
     lv_obj_align(label3, LV_ALIGN_CENTER, 0, 0);
 
-    esp32_hx8347_lvgl_unlock(hx8347_handle);
     
+    esp32_hx8347_lvgl_unlock(hx8347_handle);
+
     while (1)
     {
 
-        vTaskDelay(100);
+    
+        vTaskDelay(1000 / portTICK_PERIOD_MS);
+
     }
 
     

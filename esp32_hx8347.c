@@ -115,7 +115,7 @@ static const uint8_t hx8347_init_seq[] = {
     TFTLCD_DELAY8, 40,
 
     0x28, 1, 0x3C,
-    0x16, 1, 0x80};
+    0x16, 1, 0x88};
 
 static void hx8347_gpio_reset(void)
 {
@@ -225,10 +225,8 @@ static bool hx8347_on_color_trans_done(esp_lcd_panel_io_handle_t panel_io,
 
     lv_display_t *disp = (lv_display_t *)user_ctx;
 
-    // if (--s_pending_chunks == 0)
-    //{
     lv_display_flush_ready(disp);
-    //}
+   
     return false;
 }
 
@@ -270,42 +268,6 @@ static void lvgl_tick_timer_cb(void *arg)
     (void)arg;
     lv_tick_inc(LVGL_TICK_PERIOD_MS);
 }
-
-// static void lvgl_create_ui(lv_obj_t *scr)
-//{
-//     scr = lv_screen_active();
-
-//    lv_obj_clean(lv_screen_active());
-
-//  lv_obj_set_style_bg_color(scr, lv_color_hex(0x000000), LV_PART_MAIN);
-//  lv_obj_set_style_bg_opa(scr, LV_OPA_COVER, LV_PART_MAIN);
-
-// lv_obj_t *label = lv_label_create(scr);
-// lv_label_set_text(label, "VERMELHO ASDFGHJ");
-// lv_obj_set_style_text_color(label, lv_color_hex(0xFF0000), LV_PART_MAIN);
-// MUDAR TAMANHO DA FONTE
-// lv_obj_set_style_text_font(label, &lv_font_montserrat_24, LV_PART_MAIN);
-
-// lv_obj_center(label);
-
-/* lv_obj_t *label2 = lv_label_create(scr);
- lv_label_set_text(label2, "VERDE ZXCVBNM");
- lv_obj_set_style_text_color(label2, lv_color_hex(0x00FF00), LV_PART_MAIN);
- lv_obj_set_style_text_font(label2, &lv_font_montserrat_24, LV_PART_MAIN);
-
- lv_obj_align(label2, LV_ALIGN_TOP_MID, 0, 0);
-*/
-
-/*      lv_obj_t *img2 = lv_image_create(scr);
-     lv_image_set_src(img2, &logo);
-    lv_obj_align(img2, LV_ALIGN_BOTTOM_MID, 0, 0);
-*/
-
-//     lv_obj_set_size(img, 100, 100);
-
-//     lv_image_set_scale(img, 98); // 128 = 50%
-
-//  }
 
 static void lvgl_port_task(void *arg)
 {
@@ -404,8 +366,8 @@ static esp_err_t hx8347_i80_init(esp_lcd_panel_io_handle_t *out_io)
         .lcd_cmd_bits = LCD_CMD_BITS,
         .lcd_param_bits = LCD_PARAM_BITS,
         .flags = {
-            .reverse_color_bits = 1,
-            .swap_color_bytes = 0,
+            .reverse_color_bits = 0,
+            .swap_color_bytes = 1,
         },
     };
 
